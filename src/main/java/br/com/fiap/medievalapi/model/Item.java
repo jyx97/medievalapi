@@ -6,22 +6,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/*
-Crie os enpoints do CRUD de Item. Um item
-representa uma unidade que pode ser
-comprada no mercado do jogo.
-● nome (obrigatório)
-● tipo (arma, armadura, poção, acessório)
-● raridade (comum, raro, épico, lendário)
-● preco (valor de venda no mercado)
-● dono (relacionamento com Personagem)
-*/
 @Entity
 @Builder
 @NoArgsConstructor
@@ -35,14 +28,16 @@ public class Item {
     @NotBlank(message="Nome é obrigatório")
     private String name;
 
-    @NotBlank(message="Tipo é obrigatório")
+    @NotNull(message="Tipo é obrigatório")
     private TypeItensEnum type;
 
-    @NotBlank(message="A raridade é obrigatória")
+    @NotNull(message="A raridade é obrigatória")
     private RarityEnum rarity;
 
-    @NotBlank(message="O preço é obrigatório")
+    @NotNull(message="O preço é obrigatório")
     private double prize;
 
+    @ManyToOne
+    @JoinColumn(name="character_id")
     private Personagem dono;
 }
