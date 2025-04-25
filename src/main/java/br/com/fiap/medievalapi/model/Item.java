@@ -1,6 +1,6 @@
 package br.com.fiap.medievalapi.model;
 
-import br.com.fiap.medievalapi.components.RaridadeEnum;
+import br.com.fiap.medievalapi.components.RarityEnum;
 import br.com.fiap.medievalapi.components.TypeItensEnum;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,7 +39,7 @@ public class Item {
     private TypeItensEnum type;
 
     @NotBlank(message="A raridade é obrigatória")
-    private RaridadeEnum rarity;
+    private RarityEnum rarity;
 
     @NotBlank(message="O preço é obrigatório")
     private double prize;

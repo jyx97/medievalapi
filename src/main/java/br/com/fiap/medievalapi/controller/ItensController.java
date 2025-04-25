@@ -42,9 +42,3 @@ public class ItensController {
 
     
 }
-
-// public ResponseEntity<Category> create(@RequestBody @Valid Category category) {
-//     log.info("Cadastrando categoria " + category.getName());
-//     repository.save(category);
-//     return ResponseEntity.status(201).body(category);
-// }

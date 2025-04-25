@@ -10,7 +10,7 @@ comprada no mercado do jogo.
 ● preco (valor de venda no mercado)
 ● dono (relacionamento com Personagem)
 */
-public enum RaridadeEnum {
+public enum RarityEnum {
     COMUM,
     RARO,
     ÉPICO,
