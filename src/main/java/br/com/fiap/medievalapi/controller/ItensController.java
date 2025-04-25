@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,6 @@ import br.com.fiap.medievalapi.components.TypeItensEnum;
 import br.com.fiap.medievalapi.model.Item;
 import br.com.fiap.medievalapi.repository.ItensRepository;
 import br.com.fiap.medievalapi.specification.ItemSpecification;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
 
 @RestController
@@ -37,6 +37,7 @@ public class ItensController {
 
     @GetMapping
     public Page<Item> index(ItensFilter filters,Pageable pageable){
+        //Aqui esta o metodo get e as funcionalidades solicitadas no pdf foram feitas por paginação
         var specification=ItemSpecification.withFilters(filters);
         return repository.findAll(specification,pageable);
     }
