@@ -39,5 +39,47 @@ public class Personagem {
     
     @NotBlank(message = "As moedas são obrigatório")
     private double coins;
-    
+
+    public Personagem() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ClassEnum getTypeClass() {
+        return typeClass;
+    }
+
+    public void setTypeClass(ClassEnum typeClass) {
+        this.typeClass = typeClass;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public double getCoins() {
+        return coins;
+    }
+
+    public void setCoins(double coins) {
+        this.coins = coins;
+    }
 }
